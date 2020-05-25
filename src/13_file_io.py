@@ -13,6 +13,12 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 with open('foo.txt') as f:
     print(f.read())
 
+# or can do:
+#f = open("foo.txt","r") 
+#for line in f:
+#    print(line,end='')
+
+
 # Open up a file called "bar.txt" (which doesn't exist yet) for
 # writing. Write three lines of arbitrary content to that file,
 # then close the file. Open up "bar.txt" and inspect it to make
@@ -22,3 +28,9 @@ with open('foo.txt') as f:
 with open('bar.txt', 'w') as f:
     for n in range(1, 4):
         f.write(f'line {n}\n')
+
+# or can do:
+#f = open("bar.txt", "w")
+#f.write('First line\n')
+#f.write('second\n')
+#f.write('third')

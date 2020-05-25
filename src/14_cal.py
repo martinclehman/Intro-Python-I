@@ -36,6 +36,41 @@ year = today.year
 month = today.month
 error = False
 
+
+if (len(sys.argv)==1):
+  calendar.prmonth(int(year),int(month))
+
+if (len(sys.argv)==2):
+  month = sys.argv[1]
+  try:
+    calendar.prmonth(int(year),int(month))
+  except:
+    try:
+      month = datetime.strptime(month,"%b").month
+      calendar.prmonth(int(year),int(month))
+    except:
+      error = True
+
+if (len(sys.argv)==3):
+  month = sys.argv[1]
+  year = sys.argv[2]
+  try:
+    calendar.prmonth(int(year),int(month))
+  except: 
+    try: 
+      month = datetime.strptime(month,"%b").month
+      calendar.prmonth(int(year),int(month))
+    except:
+      error = True
+
+if (error == True):
+  print("Usage:     14_cal.py [month] [year]")
+  print("  for ex. \"14_cal.py    5     2019\"")
+  print("  for ex. \"14_cal.py   May    2019\"")
+
+
+
+""" 
 if len(sys.argv) >= 2:
     try:
         month = int(sys.argv[1])
@@ -66,4 +101,4 @@ except IndexError:
 if error or len(sys.argv) > 3:
     print('Usage: 14_cal.py [month] [year]')
 else:
-    print(cal)
+    print(cal) """
